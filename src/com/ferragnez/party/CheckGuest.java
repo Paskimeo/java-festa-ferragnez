@@ -16,9 +16,24 @@ public class CheckGuest {
 		 String inserireNome;
 		   
 		      System.out.print("come ti chiami? vediamo se sei nella lista: ");
-		      inserireNome = scan.next();
+		      inserireNome = scan.nextLine();
 		    
-		      System.out.println(inserireNome);
+		    
+		//sezione ciclo per ricerca nome
+		      boolean trovato = false;
+		      for(int i = 0; i < listaInvitati.length; i++ ) {
+		    	  if(inserireNome.equalsIgnoreCase(listaInvitati[i])) {
+		    		  trovato = true;
+		    		  
+		    	  }
+		      }
+		      if (trovato == true) {
+			      System.out.print("sei invitato ");
+
+		      }
+		      else {
+		    	  System.out.print("NON sei invitato ");
+		      }
 		}
 
 	}
