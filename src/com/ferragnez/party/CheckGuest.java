@@ -11,31 +11,53 @@ public class CheckGuest {
 				"Martina Maccherone", "Rachel Zeilic"};
 		
 		Scanner scan = new Scanner(System.in);
-		
+		boolean flag = false;
+		int i =0;
 		//sezione richiesta nome
 		 String inserireNome;
 		   
-		      System.out.print("come ti chiami? vediamo se sei nella lista: ");
+		 
+		 
+			 System.out.print("come ti chiami? vediamo se sei nella lista: ");
 		      inserireNome = scan.nextLine();
-		    
+		 
+		      
+		 while(i < listaInvitati.length) {
+			  if(inserireNome.equalsIgnoreCase(listaInvitati[i])) {
+				   		  flag = true;
+				    		  
+			  } 
+			  i++;
+		 }
+	    		if (flag == true) {
+			  	      System.out.print("sei invitato ");
+
+			      }
+			      else {
+			   	  System.out.print("NON sei invitato ");
+			     }  
+		    	  			
+		      
 		    
 		//sezione ciclo per ricerca nome
-		      boolean trovato = false;
-		      for(int i = 0; i < listaInvitati.length; i++ ) {
-		    	  if(inserireNome.equalsIgnoreCase(listaInvitati[i])) {
-		    		  trovato = true;
+		  //    boolean trovato = false;
+		  //    for(int i = 0; i < listaInvitati.length; i++ ) {
+		  //	  if(inserireNome.equalsIgnoreCase(listaInvitati[i])) {
+		  //  		  trovato = true;
 		    		  
-		    	  }
-		      }
-		      if (trovato == true) {
-			      System.out.print("sei invitato ");
+		  //  	  }
+		  //    }
+		  //    if (trovato == true) {
+		  //	      System.out.print("sei invitato ");
 
-		      }
-		      else {
-		    	  System.out.print("NON sei invitato ");
-		      }
+		  //    }
+		  //    else {
+		  //  	  System.out.print("NON sei invitato ");
+		  //   }
+	    		scan.close();
 		}
 
 	}
+
 
 
